@@ -36,5 +36,6 @@ inputs = {
   monitoring    = true
   path_to_keys  = "${get_parent_terragrunt_dir()}/keys"
   path_to_hosts = "${get_parent_terragrunt_dir()}/hosts"
+  root_path     = get_parent_terragrunt_dir()
   private_ip    = "10.0.0.11"
 }

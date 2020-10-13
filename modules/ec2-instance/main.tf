@@ -45,6 +45,17 @@ resource "null_resource" "provisioners" {
     }
   }
 
+  provisioner "file" {
+    source      = "${var.root_path}/files/ceph.repo"
+    destination = "/tmp/ceph.repo"
+    connection {
+      type  = "ssh"
+      host  = "${aws_instance.instance.public_ip}"
+      user  = var.user
+      agent = true
+    }
+  }
+
   provisioner "remote-exec" {
     inline = [
       "sudo mv /tmp/keys/id_rsa /home/centos/.ssh/id_rsa",
@@ -52,6 +63,10 @@ resource "null_resource" "provisioners" {
       "sudo chown centos:centos /home/centos/.ssh/id_rsa",
       "sudo cat /tmp/keys/id_rsa.pub >> /home/centos/.ssh/authorized_keys",
       "sudo cp /tmp/hosts /etc/hosts",
+      "sudo cp /tmp/ceph.repo /etc/yum.repos.d/ceph.repo",
+      "sudo rpm --import 'https://download.ceph.com/keys/release.asc'",
+      "sudo yum install epel-release -y",
+      "sudo yum install ceph -y",
     ]
     connection {
       type  = "ssh"

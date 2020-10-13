@@ -56,6 +56,11 @@ variable "path_to_hosts" {
   type        = string
 }
 
+variable "root_path" {
+  description = "Root Terragrunt path"
+  type        = string
+}
+
 variable "private_ip" {
   description = "Private IP"
   type        = string
