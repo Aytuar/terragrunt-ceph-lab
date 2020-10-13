@@ -21,4 +21,5 @@ dependency "vpc" {
 inputs = {
   vpc_id = dependency.vpc.outputs.id
   name   = "ceph_lab"
+  cidr_block = "10.0.0.0/16"
 }
