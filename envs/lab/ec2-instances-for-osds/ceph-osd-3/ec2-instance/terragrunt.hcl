@@ -34,4 +34,5 @@ inputs = {
   subnet_id     = dependency.subnet.outputs.id
   sg_ids        = [dependency.sg.outputs.id]
   monitoring    = true
+  path_to_keys  = "${get_parent_terragrunt_dir()}/keys"
 }

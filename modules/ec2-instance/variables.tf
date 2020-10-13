@@ -39,3 +39,14 @@ variable "subnet_id" {
   description = "Subnet ID"
   type        = string
 }
+
+variable "user" {
+  description = "User name"
+  type        = string
+  default     = "centos"
+}
+
+variable "path_to_keys" {
+  description = "Path to SSH keys"
+  type        = string
+}
