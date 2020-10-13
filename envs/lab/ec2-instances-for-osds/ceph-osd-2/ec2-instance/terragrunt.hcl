@@ -35,5 +35,6 @@ inputs = {
   sg_ids        = [dependency.sg.outputs.id]
   monitoring    = true
   path_to_keys  = "${get_parent_terragrunt_dir()}/keys"
+  path_to_hosts = "${get_parent_terragrunt_dir()}/hosts"
   private_ip    = "10.0.0.22"
 }

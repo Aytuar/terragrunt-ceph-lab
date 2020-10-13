@@ -51,6 +51,11 @@ variable "path_to_keys" {
   type        = string
 }
 
+variable "path_to_hosts" {
+  description = "Path to /etc/hosts"
+  type        = string
+}
+
 variable "private_ip" {
   description = "Private IP"
   type        = string

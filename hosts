@@ -1,0 +1,10 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+10.0.0.11   ceph-mon-1
+10.0.0.12   ceph-mon-2
+10.0.0.13   ceph-mon-3
+10.0.0.21   ceph-osd-1
+10.0.0.22   ceph-osd-2
+10.0.0.23   ceph-osd-3
+10.0.0.24   ceph-osd-4
