@@ -5,6 +5,7 @@ resource "aws_instance" "instance" {
   subnet_id     = var.subnet_id
   user_data     = var.user_data
   monitoring    = var.monitoring
+  private_ip    = var.private_ip
 
   tags = {
     Name = var.name

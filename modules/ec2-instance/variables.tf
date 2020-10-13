@@ -50,3 +50,9 @@ variable "path_to_keys" {
   description = "Path to SSH keys"
   type        = string
 }
+
+variable "private_ip" {
+  description = "Private IP"
+  type        = string
+  default     = null
+}
